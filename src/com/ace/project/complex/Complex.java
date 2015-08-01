@@ -24,7 +24,8 @@ public class Complex {
 	this.imaginary = imaginary;
 
 	this.isNaN = (Double.isNaN(real) || Double.isNaN(imaginary));
-	this.isInfinite = ((!this.isNaN) && (Double.isInfinite(real) || Double.isInfinite(imaginary)));
+	this.isInfinite = ((!this.isNaN)
+		&& (Double.isInfinite(real) || Double.isInfinite(imaginary)));
     }
 
     public Complex(double real) {
@@ -60,7 +61,8 @@ public class Complex {
     }
 
     public boolean equals(Complex complex) {
-	return ((this.real == complex.real) && (this.imaginary == complex.imaginary));
+	return ((this.real == complex.real)
+		&& (this.imaginary == complex.imaginary));
     }
 
     public double magnitude() {
@@ -96,7 +98,8 @@ public class Complex {
 	if (this.isInfinite || complex.isInfinite)
 	    return INF;
 
-	return new Complex(this.real + complex.real, this.imaginary + complex.imaginary);
+	return new Complex(this.real + complex.real,
+		this.imaginary + complex.imaginary);
     }
 
     public Complex sub(double real) {
@@ -114,7 +117,8 @@ public class Complex {
 	if (this.isInfinite || complex.isInfinite)
 	    return INF;
 
-	return new Complex(this.real - complex.real, this.imaginary - complex.imaginary);
+	return new Complex(this.real - complex.real,
+		this.imaginary - complex.imaginary);
     }
 
     public Complex multiply(double real) {
@@ -128,8 +132,10 @@ public class Complex {
 
     public Complex multiply(Complex complex) {
 	// need to consider more conditions for multiplying...
-	double realpart = this.real * complex.real - this.imaginary * complex.imaginary;
-	double imagpart = this.real * complex.imaginary + this.imaginary * complex.real;
+	double realpart = this.real * complex.real
+		- this.imaginary * complex.imaginary;
+	double imagpart = this.real * complex.imaginary
+		+ this.imaginary * complex.real;
 
 	return new Complex(realpart, imagpart);
     }
@@ -148,8 +154,10 @@ public class Complex {
 	// Need to add more conditions for dividing
 
 	double den = Math.pow(complex.real, 2) + Math.pow(complex.imaginary, 2);
-	double realpart = (this.real * complex.real + this.imaginary * complex.imaginary) / den;
-	double imagpart = (this.imaginary + complex.real - this.real * complex.imaginary) / den;
+	double realpart = (this.real * complex.real
+		+ this.imaginary * complex.imaginary) / den;
+	double imagpart = (this.imaginary + complex.real
+		- this.real * complex.imaginary) / den;
 	return new Complex(realpart, imagpart);
     }
 

@@ -6,7 +6,6 @@ package com.ace.project.signalprocess.power;
  * @author Administrator
  *
  */
-public enum FrequencyPosition
-{
-	LEFT, RIGHT;
+public enum FrequencyPosition {
+    LEFT, RIGHT;
 }

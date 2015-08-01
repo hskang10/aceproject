@@ -5,8 +5,8 @@ import com.ace.project.signalprocess.power.Bandwidth;
 import com.ace.project.signalprocess.power.SignalPower;
 
 public class EegPower {
-    private static final Bandwidth THETA_BAND, ALPHA_BAND, BETA_BAND, GAMMA_BAND, SMR_BAND, LOW_BETA_BAND,
-	    MID_BETA_BAND, TOTAL_BAND;
+    private static final Bandwidth THETA_BAND, ALPHA_BAND, BETA_BAND,
+	    GAMMA_BAND, SMR_BAND, LOW_BETA_BAND, MID_BETA_BAND, TOTAL_BAND;
 
     static {
 	THETA_BAND = new Bandwidth(4, 8);
