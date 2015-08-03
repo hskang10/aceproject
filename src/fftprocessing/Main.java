@@ -3,6 +3,7 @@ package fftprocessing;
 import java.util.Scanner;
 
 import com.ace.project.complex.Complex;
+import com.ace.project.signalprocess.eeg.concentration.Hurst;
 import com.ace.project.signalprocess.eeg.power.EegPower;
 import com.ace.project.signalprocess.generator.SignalGenerator;
 import com.ace.project.signalprocess.power.SignalPower;
@@ -43,6 +44,8 @@ public class Main {
 	 * System.out.println(sine.get(i)); }
 	 */
 	// Magnitude Display
+	
+	double hurst = Hurst.calHurst(sine);
 
 	for (int i = 0; i < fftsine.length; i++) {
 	    System.out.println(fftsine[i].magnitude() + "/" + freq[i]);
