@@ -2,11 +2,11 @@ package com.ace.project.signalprocess.eeg.concentration;
 
 import java.util.*;
 
-public class hurst {
+public class Hurst {
 
     /* METHOD */
     
-    public static double CalHurst(double[] EEGdata) {
+    public static double calHurst(double[] EEGdata) {
 	double hurst = 0;
 	double mean = 0;
 	double diffMaxMin = 0;
