@@ -6,7 +6,7 @@ import com.ace.project.signalprocess.power.SignalPower;
 
 public class EegPower {
     private static final Bandwidth THETA_BAND, ALPHA_BAND, BETA_BAND,
-	    GAMMA_BAND, SMR_BAND, LOW_BETA_BAND, MID_BETA_BAND, TOTAL_BAND;
+	    GAMMA_BAND, SMR_BAND, LOW_BETA_BAND, MID_BETA_BAND, HIGH_BETA_BAND, TOTAL_BAND;
 
     static {
 	THETA_BAND = new Bandwidth(4, 8);
@@ -16,6 +16,7 @@ public class EegPower {
 	SMR_BAND = new Bandwidth(12, 15);
 	LOW_BETA_BAND = new Bandwidth(12, 15);
 	MID_BETA_BAND = new Bandwidth(15, 20);
+	HIGH_BETA_BAND = new Bandwidth(20, 30);
 	TOTAL_BAND = new Bandwidth(4, 50);
     }
 
@@ -45,6 +46,10 @@ public class EegPower {
 
     public static double calcMidBeta(Complex[] signal, double sampleRate) {
 	return SignalPower.calcAbsolutePower(signal, sampleRate, MID_BETA_BAND);
+    }
+    
+    public static double calcHighBeta(Complex[] signal, double sampleRate) {
+	return SignalPower.calcAbsolutePower(signal, sampleRate, HIGH_BETA_BAND);
     }
 
     public static double calcTotalEegBand(Complex[] signal, double sampleRate) {
